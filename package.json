@@ -22,9 +22,15 @@
     "url": "https://github.com/poetic/react-google-places-component/issues"
   },
   "homepage": "https://github.com/poetic/react-google-places-component#readme",
+  "peerDependencies": {
+    "react": "^15.0.1"
+  },
   "devDependencies": {
     "babel-cli": "^6.7.7",
     "babel-preset-react": "^6.5.0",
-    "babel-preset-stage-0": "^6.5.0"
+    "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
+    "jquery": "^2.2.3",
+    "mocha": "^2.4.5"
   }
 }
