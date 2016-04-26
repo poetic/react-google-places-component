@@ -1,9 +1,10 @@
 {
   "name": "react-google-places-component",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "react-google-places-component",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "babel src --out-dir dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/poetic/react-google-places-component/issues"
   },
-  "homepage": "https://github.com/poetic/react-google-places-component#readme"
+  "homepage": "https://github.com/poetic/react-google-places-component#readme",
+  "devDependencies": {
+    "babel-cli": "^6.7.7",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0"
+  }
 }

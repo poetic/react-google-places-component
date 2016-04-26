@@ -13,10 +13,9 @@ const Place = ({prediction, onClick}) => {
 
 const Places = function({onClickPlace}) {
   return <GooglePlaces
+    options={{input: 'poetic systems', key='XXX'}}
     itemComponent={Place}
-    itemProps={{onClick: onClickPlace}}
-    input={'poetic systems'}
-    key={'XXX'} />
+    itemProps={{onClick: onClickPlace}} />
 }
 ```
 
