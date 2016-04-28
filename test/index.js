@@ -1,7 +1,7 @@
-import WrapperGooglePlaces from '../src/WrapperGooglePlaces.js';
 import $ from 'jquery';
 import ReactDOM from 'react-dom';
 import React from 'react';
+import GooglePlaces from '../src/index.js';
 
 class ItemComponent extends React.Component{
   render(){
@@ -15,16 +15,41 @@ class ItemComponent extends React.Component{
 }
 
   describe('GooglePlaces', function() {
-    // TODO: import files and dependencies
     it("renders", function(done) {
-    ReactDOM.render(
-      <WrapperGooglePlaces input={'rice'} itemComponent={ItemComponent}/>,
-       document.getElementById('test')
-    )
+      this.timeout(5000)
 
-    setTimeout(function() {
-      expect($('.item-component').length).to.be.above(0);
-      done();
-    }, 800);
+      ReactDOM.render(
+        <WrapperGooglePlaces input={'rice'} itemComponent={ItemComponent}/>,
+          document.getElementById('test')
+      )
+
+      setTimeout(function() {
+        expect($('.item-component').length).to.be.above(0);
+        done();
+      }, 2000);
   });
 })
+
+class WrapperGooglePlaces extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      renderGoogle: false,
+    }
+  }
+
+  componentWillMount(){
+    setTimeout(() => {
+      this.setState({renderGoogle: true})
+    }, 300)
+  }
+  render() {
+      return (
+        <div>
+          <GooglePlaces input={this.props.input} itemComponent={this.props.itemComponent}/>
+        </div>
+      )
+    }
+}
+
+export default WrapperGooglePlaces;
