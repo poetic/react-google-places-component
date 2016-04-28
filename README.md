@@ -5,7 +5,7 @@ First install GooglePlaces component
 ```
 $  npm install react-google-places-component
 ```
-add the script tag to your HTML filename
+Add the script tag to your HTML
 ```
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 ```
