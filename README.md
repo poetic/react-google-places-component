@@ -1,5 +1,15 @@
 # react-google-places-component
 
+## Usage
+First install GooglePlaces component
+```
+$  npm install react-google-places-component
+```
+add the script tag to your HTML filename
+```
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+```
+
 ## API
 ```
 import React from 'react';
@@ -13,7 +23,7 @@ const Place = ({prediction, onClick}) => {
 
 const Places = function({onClickPlace}) {
   return <GooglePlaces
-    options={{input: 'poetic systems', key='XXX'}}
+    options={{input: 'poetic systems'}}
     itemComponent={Place}
     itemProps={{onClick: onClickPlace}} />
 }
