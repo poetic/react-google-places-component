@@ -8,7 +8,7 @@ class GooglePlaces extends React.Component {
 
   componentWillReceiveProps(props) {
     if (!props.input) {
-      this.setState({ suggestions: [] });
+      this.setState({ predictions: [] });
       return false;
     }
     const service = new google.maps.places.AutocompleteService();
