@@ -1,6 +1,6 @@
 {
   "name": "react-google-places-component",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "react-google-places-component",
   "main": "dist/index.js",
   "scripts": {
