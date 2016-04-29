@@ -7,15 +7,16 @@ class GooglePlaces extends React.Component {
   }
 
   componentWillReceiveProps(props) {
-    if (!props.input) {
-      this.setState({ suggestions: [] });
+    const { options } = props
+    if (!options.input) {
+      this.setState({ predictions: [] });
       return false;
     }
     const service = new google.maps.places.AutocompleteService();
-    service.getQueryPredictions(
-      { input: props.input },
+    service.getPlacePredictions(
+      options,
       (predictions = []) => {
-        this.setState({ predictions });
+        this.setState({ predictions  });
       }
     );
     return true;
@@ -41,7 +42,7 @@ class GooglePlaces extends React.Component {
 
 export default GooglePlaces;
 GooglePlaces.propTypes = {
-  input: React.PropTypes.string.isRequired,
+  options: React.PropTypes.object.isRequired,
   itemComponent: React.PropTypes.func.isRequired,
   itemProps: React.PropTypes.object,
 };

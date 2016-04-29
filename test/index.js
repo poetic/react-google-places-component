@@ -19,12 +19,12 @@ class ItemComponent extends React.Component{
       this.timeout(5000)
 
       ReactDOM.render(
-        <WrapperGooglePlaces input={'rice'} itemComponent={ItemComponent}/>,
+        <WrapperGooglePlaces options={{input: 'rice'}} itemComponent={ItemComponent}/>,
           document.getElementById('test')
       )
 
       setTimeout(function() {
-        expect($('.item-component').length).to.be.above(0);
+        chai.expect($('.item-component').length).to.be.above(0);
         done();
       }, 2000);
   });
@@ -46,7 +46,7 @@ class WrapperGooglePlaces extends React.Component{
   render() {
       return (
         <div>
-          <GooglePlaces input={this.props.input} itemComponent={this.props.itemComponent}/>
+          <GooglePlaces options={{input: 'rice'}} itemComponent={this.props.itemComponent}/>
         </div>
       )
     }
