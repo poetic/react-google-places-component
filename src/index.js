@@ -31,7 +31,10 @@ class GooglePlaces extends React.Component {
         {
           this.state.predictions.map((prediction, index) => {
             return (
-              <ItemComponent key={index} prediction={prediction} {...itemProps}/>
+              <ItemComponent key={index}
+                prediction={prediction}
+                {...itemProps}
+              />
             );
           })
         }

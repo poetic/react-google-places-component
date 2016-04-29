@@ -5,30 +5,30 @@ First install GooglePlaces component
 ```
 $  npm install react-google-places-component
 ```
-Add the script tag to your HTML that includes your API key
+Add the following script tag to your HTML.
+Include your API key for "Google Places API Web Service".
 ```
 <script src="https://maps.googleapis.com/maps/api/js?key=XXXXXXXXXX&libraries=places"></script>
 ```
 
-## API
+## Component API
 ```
 <GooglePlaces
   options={{input: 'poetic systems'}}
   itemComponent={Place}
   itemProps={{onClick: onClickPlace}}
 />
----
-options:
-AutocompletionRequest object specifications being sent through
-getPlacePredictions().
+
+**options**
+AutocompletionRequest object specifications being sent through getPlacePredictions().
 For more details:
 https://developers.google.com/maps/documentation/javascript/places-autocomplete#place_autocomplete_service
 https://developers.google.com/maps/documentation/javascript/reference#AutocompleteService
----
-itemComponent:
+
+**itemComponent**
 React component that will be rendered for each prediction.
----
-itemProps:
+
+**itemProps**
 Pros that will be passed to each itemComponent.
 ```
 
@@ -38,9 +38,11 @@ import React from 'react';
 import GooglePlaces from 'react-google-places-component';
 
 const Place = ({prediction, onClick}) => {
-  return (
-    <div onClick={onClick}>{prediction.description}<div>
-  )
+    return (
+      <div onClick={onClick.bind(this, prediction.description)} className='item-component'>
+        {prediction.description}
+      </div>
+    )
 }
 
 const Places = function({onClickPlace}) {

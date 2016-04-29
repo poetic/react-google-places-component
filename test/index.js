@@ -3,15 +3,12 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import GooglePlaces from '../src/index.js';
 
-class ItemComponent extends React.Component{
-  render(){
-    const {suggestion} = this.props;
+const ItemComponent = ({prediction, onClick}) => {
     return (
-      <div className='item-component'>
-        {this.props.prediction.description}
+      <div onClick={onClick.bind(this, prediction.description)} className='item-component'>
+        {prediction.description}
       </div>
     )
-  }
 }
 
   describe('GooglePlaces', function() {
@@ -43,10 +40,19 @@ class WrapperGooglePlaces extends React.Component{
       this.setState({renderGoogle: true})
     }, 300)
   }
+
+  handleClick(address) {
+    console.log(address)
+  }
+
   render() {
       return (
         <div>
-          <GooglePlaces options={{input: 'rice'}} itemComponent={this.props.itemComponent}/>
+          <GooglePlaces
+            options={{input: 'rice'}}
+            itemComponent={this.props.itemComponent}
+            itemProps={{ onClick: this.handleClick }}
+          />
         </div>
       )
     }
