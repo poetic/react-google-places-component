@@ -18,17 +18,21 @@ Include your API key for "Google Places API Web Service".
   itemComponent={Place}
   itemProps={{onClick: onClickPlace}}
 />
+```
 
 ##### options
+```
 AutocompletionRequest object specifications being sent through getPlacePredictions().
 For more details:
 https://developers.google.com/maps/documentation/javascript/places-autocomplete#place_autocomplete_service
 https://developers.google.com/maps/documentation/javascript/reference#AutocompleteService
-
+```
 ##### itemComponent
+```
 React component that will be rendered for each prediction.
-
+```
 ##### itemProps
+```
 Pros that will be passed to each itemComponent.
 ```
 
